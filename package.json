@@ -1,0 +1,37 @@
+{
+  "name": "vrrp-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@hookform/resolvers": "^2.9.6",
+    "@mui/material": "^5.9.1",
+    "@mui/styles": "^5.9.2",
+    "@mui/x-date-pickers": "^5.0.0-beta.1",
+    "@paypal/react-paypal-js": "^7.8.1",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-hook-form": "^7.33.1",
+    "react-router-dom": "^6.3.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.2"
+  }
+}
