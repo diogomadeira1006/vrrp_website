@@ -10,6 +10,8 @@ import { PayPalScriptOptions } from "@paypal/paypal-js/types/script-options";
 import { PayPalButtonsComponentProps } from "@paypal/paypal-js/types/components/buttons";
 import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
+import variables from '@/variables'
+
 
 const paypalScriptOptions: PayPalScriptOptions = {
   "client-id":
@@ -38,7 +40,8 @@ function PaypalOptions({ triggerSubmit }) {
         purchase_units: [
           {
             amount: {
-              value: import.meta.env.VITE_PAYMENT_PRICE,
+              // value: import.meta.env.VITE_PAYMENT_PRICE,
+              value: variables.VITE_PAYMENT_PRICE,
             },
           },
         ],
