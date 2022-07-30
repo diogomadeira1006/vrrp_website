@@ -28,6 +28,7 @@ import { FormInputSelect } from "@components/form/inputs/FormInputSelect";
 import { applicationMapper } from "@mappers/application/applicationMapper";
 import ApplicationTypeCard from "@components/paymentTypeCard";
 import AlertDialog from "@components/dialog";
+import variables from '@/variables'
 
 // interface IFormInputs {
 //   fullName: string;
@@ -153,7 +154,8 @@ const Application = () => {
 
       if (applicationType === 1) {
         axios
-          .post(import.meta.env.VITE_URL_BACKEND, applicationMapper(values), {
+          // .post(import.meta.env.VITE_URL_BACKEND, applicationMapper(values), {
+          .post(variables.VITE_URL_BACKEND, applicationMapper(values), {
             headers: { "Content-Type": "application/json" },
           })
           .then((response) => {
@@ -169,7 +171,8 @@ const Application = () => {
           });
       } else if (applicationType === 1 && payAndSubmit === true) {
         axios
-          .post(import.meta.env.VITE_URL_BACKEND, applicationMapper(values), {
+          // .post(import.meta.env.VITE_URL_BACKEND, applicationMapper(values), {
+          .post(variables.VITE_URL_BACKEND, applicationMapper(values), {
             headers: { "Content-Type": "application/json" },
           })
           .then((response) => {
@@ -258,7 +261,8 @@ const Application = () => {
                   id={1}
                   applicationType={applicationType}
                   setApplicationType={setApplicationType}
-                  disabled={import.meta.env.VITE_APPLICATION_STATUS_FREE}
+                  // disabled={import.meta.env.VITE_APPLICATION_STATUS_FREE}
+                  disabled={variables.VITE_APPLICATION_STATUS_FREE}
                   price={0}
                   setValue={setValue}
                   paymentType="free"
@@ -269,8 +273,10 @@ const Application = () => {
                   id={2}
                   applicationType={applicationType}
                   setApplicationType={setApplicationType}
-                  disabled={import.meta.env.VITE_APPLICATION_STATUS_PAID}
-                  price={import.meta.env.VITE_PAYMENT_PRICE}
+                  // disabled={import.meta.env.VITE_APPLICATION_STATUS_PAID}
+                  disabled={variables.VITE_APPLICATION_STATUS_PAID}
+                  // price={import.meta.env.VITE_PAYMENT_PRICE}
+                  price={variables.VITE_PAYMENT_PRICE}
                   setValue={setValue}
                   paymentType="pay"
                 />
@@ -477,7 +483,8 @@ const Application = () => {
                     <Grid item xs={12}>
                       <ReCAPTCHA
                         ref={recaptchaRef}
-                        sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                        // sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                        sitekey={variables.VITE_RECAPTCHA_KEY}
                         // onChange={onChange}
                         onChange={(e) => {
                           if (e) {
